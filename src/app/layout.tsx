@@ -8,24 +8,30 @@ import { CartProvider } from "../context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Get site URL from environment variable with fallback
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kentank.co.ke';
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Kentank Kenya';
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@kentank.co.ke';
+const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '+254784400492';
+
 export const metadata: Metadata = {
   title: "Kentank Water Tanks Kenya | Premium Water Storage Solutions",
   description: "Genuine Kentank water tanks for homes, farms, and industries. Free countrywide delivery, 15-year warranty, KEBS certified. Prices from KSh 5,500 for 1000L tanks.",
   keywords: "Kentank Kenya, water tanks Kenya, plastic tanks, water storage tanks, septic tanks Kenya, underground tanks, tank suppliers Kenya, free delivery water tanks",
-  authors: [{ name: "Kentank Kenya" }],
-  creator: "Kentank Kenya",
-  publisher: "Kentank Kenya",
+  authors: [{ name: siteName }],
+  creator: siteName,
+  publisher: siteName,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://kentank.co.ke'),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Kentank Water Tanks Kenya | Premium Water Storage Solutions",
     description: "Genuine Kentank water tanks with free countrywide delivery, 15-year warranty, and KEBS certification. Order now!",
-    url: 'https://kentank.co.ke',
-    siteName: 'Kentank Kenya',
+    url: siteUrl,
+    siteName: siteName,
     locale: 'en_KE',
     type: 'website',
   },
@@ -59,11 +65,11 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Kentank Kenya - Kentank Water Tanks',
+    name: `${siteName} - Kentank Water Tanks`,
     description: 'Genuine Kentank water tanks for homes, farms, and industries. Free countrywide delivery, 15-year warranty, KEBS certified.',
-    url: 'https://kentank.co.ke',
-    telephone: '+2540784400492',
-    email: 'info@kentank.co.ke',
+    url: siteUrl,
+    telephone: contactPhone.replace(/\s/g, ''),
+    email: contactEmail,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'KE',
@@ -156,13 +162,13 @@ export default function RootLayout({
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Kentank Kenya',
-    url: 'https://kentank.co.ke',
-    logo: 'https://kentank.co.ke/assets/logo.jpeg',
+    name: siteName,
+    url: siteUrl,
+    logo: `${siteUrl}/assets/logo.jpeg`,
     description: 'Leading supplier of genuine Kentank water tanks in Kenya',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+2540784400492',
+      telephone: contactPhone.replace(/\s/g, ''),
       contactType: 'sales',
       availableLanguage: 'English',
     },
