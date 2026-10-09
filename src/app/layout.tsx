@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 // Get site URL from environment variable with fallback
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kentank.co.ke';
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Kentank Kenya';
-const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@kentank.co.ke';
-const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '+254784400492';
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'kentank4414@gmail.com';
+const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '+254737042076';
 
 export const metadata: Metadata = {
   title: "Kentank Water Tanks Kenya | Premium Water Storage Solutions",

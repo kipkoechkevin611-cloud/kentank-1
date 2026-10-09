@@ -78,7 +78,7 @@ ${formData.additionalNotes ? `• Notes: ${formData.additionalNotes}` : ''}
 ✅ *Please confirm my order and provide payment details.*
     `.trim();
 
-    const whatsappUrl = `https://wa.me/2540784400492?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/254737042076?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     onClose();
   };

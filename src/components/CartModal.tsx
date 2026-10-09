@@ -65,7 +65,7 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
     );
 
     setTimeout(() => {
-      window.open(`https://wa.me/2540784400492?text=${whatsappMessage}`, '_blank');
+      window.open(`https://wa.me/254737042076?text=${whatsappMessage}`, '_blank');
       setIsSubmitting(false);
       clearCart();
       setShowCheckoutForm(false);
@@ -74,39 +74,45 @@ ${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
     }, 1000);
   };
 
-  const handleEmailCheckout = () => {
+  const handleEmailCheckout = async () => {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
 
-    const message = cart
-      .map(
-        (item) =>
-          `• ${item.name} (${item.capacity}) - ${item.price} x ${item.quantity}`
-      )
-      .join('\n');
-    const total = cartTotal.toLocaleString();
-    const customerInfo = `
-Customer Details:
-• Name: ${formData.name}
-• Phone: ${formData.phone}
-• Email: ${formData.email}
-• Location: ${formData.location}
-${formData.notes ? `• Notes: ${formData.notes}` : ''}`;
+    try {
+      const response = await fetch('/api/send-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          location: formData.location,
+          notes: formData.notes,
+          cart: cart,
+          total: cartTotal,
+        }),
+      });
 
-    const emailSubject = encodeURIComponent(`Water Tank Order - ${formData.name}`);
-    const emailBody = encodeURIComponent(
-      `Hello, I would like to order:\n\n${message}\n\nTotal: KSh ${total}\n\n${customerInfo}\n\nPlease contact me with delivery details and payment options.`
-    );
+      const data = await response.json();
 
-    setTimeout(() => {
-      window.open(`mailto:info@kentank.co.ke?subject=${emailSubject}&body=${emailBody}`, '_blank');
+      if (data.success) {
+        clearCart();
+        setShowCheckoutForm(false);
+        onClose();
+        setFormData({ name: '', phone: '', email: '', location: '', notes: '' });
+        alert('Order submitted successfully! We will contact you shortly.');
+      } else {
+        alert('Failed to submit order. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting order:', error);
+      alert('An error occurred. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      clearCart();
-      setShowCheckoutForm(false);
-      onClose();
-      setFormData({ name: '', phone: '', email: '', location: '', notes: '' });
-    }, 1000);
+    }
   };
 
   const deliveryInfo = {
