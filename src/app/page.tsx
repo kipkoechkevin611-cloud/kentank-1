@@ -311,11 +311,11 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/80 to-navy-900/95" />
         </div>
-        
+
         {/* Decorative Elements */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        
+
         <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -333,14 +333,14 @@ export default function Home() {
                 🇰🇪 Kenya&apos;s #1 Water Tank Supplier
               </span>
             </motion.div>
-            
+
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Premium Water Storage Solutions
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 md:mb-8 leading-relaxed max-w-3xl">
               Genuine Kentank water tanks with free countrywide delivery. From 500L to 24,000L for homes, farms, and industries.
             </p>
-            
+
             <div className="flex flex-wrap gap-3 md:gap-4 mb-8 md:mb-12">
               <Link href="/products" className="flex-1 sm:flex-none min-w-[160px] md:min-w-[200px]">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-sm md:text-base lg:text-lg py-3 md:py-4 px-4 md:px-8 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
@@ -348,7 +348,7 @@ export default function Home() {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/2540784400492"
+                href="https://wa.me/254737042076"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-none min-w-[160px] md:min-w-[200px] inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm md:text-base lg:text-lg font-semibold py-3 md:py-4 px-4 md:px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
@@ -357,14 +357,14 @@ export default function Home() {
                 Order via WhatsApp
               </a>
               <a
-                href="tel:+2540784400492"
+                href="tel:+254737042076"
                 className="flex-1 sm:flex-none min-w-[160px] md:min-w-[200px] inline-flex items-center justify-center gap-2 bg-white text-navy-900 hover:bg-gray-100 text-sm md:text-base lg:text-lg font-bold py-3 md:py-4 px-4 md:px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5 text-orange-500" />
-                +254784400492
+                +254737042076
               </a>
             </div>
-            
+
             {/* Trust Indicators */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

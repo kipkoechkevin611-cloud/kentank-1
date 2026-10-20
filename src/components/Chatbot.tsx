@@ -66,11 +66,11 @@ const Chatbot = () => {
     }
 
     if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('call')) {
-      return "You can reach us at:\n• Phone: +254784400492\n• WhatsApp: +254784400492\n• Email: info@kentank.co.ke\n\nOur team is available Mon-Sat, 8AM-6PM.";
+      return "You can reach us at:\n• Phone: +254737042076\n• WhatsApp: +254737042076\n• Email: info@kentank.co.ke\n\nOur team is available Mon-Sat, 8AM-6PM.";
     }
 
     if (lowerMessage.includes('order') || lowerMessage.includes('buy') || lowerMessage.includes('purchase')) {
-      return "You can order in three ways:\n1. Add to cart on our website and checkout\n2. Call us at +254784400492\n3. Use WhatsApp to place your order\n\nWhich method would you prefer?";
+      return "You can order in three ways:\n1. Add to cart on our website and checkout\n2. Call us at +254737042076\n3. Use WhatsApp to place your order\n\nWhich method would you prefer?";
     }
 
     if (lowerMessage.includes('kebs') || lowerMessage.includes('certified') || lowerMessage.includes('quality')) {
@@ -117,7 +117,7 @@ const Chatbot = () => {
       return "Thank you for chatting with Kentank! Feel free to reach out anytime. Have a great day!";
     }
 
-    return "I'd be happy to help with that! You can:\n• Browse our products page for detailed information\n• Call us at +254784400492 for immediate assistance\n• Use WhatsApp to place an order\n\nAsk me about prices, delivery, warranty, tank types, sizes, installation, or anything else about water tanks!";
+    return "I'd be happy to help with that! You can:\n• Browse our products page for detailed information\n• Call us at +254737042076 for immediate assistance\n• Use WhatsApp to place an order\n\nAsk me about prices, delivery, warranty, tank types, sizes, installation, or anything else about water tanks!";
   };
 
   const handleSendMessage = async () => {
@@ -177,9 +177,8 @@ const Chatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className={`fixed bottom-24 right-6 z-40 bg-white rounded-2xl shadow-2xl overflow-hidden ${
-              isMinimized ? 'h-14' : 'w-96 h-[500px]'
-            }`}
+            className={`fixed bottom-24 right-6 z-40 bg-white rounded-2xl shadow-2xl overflow-hidden ${isMinimized ? 'h-14' : 'w-96 h-[500px]'
+              }`}
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-navy-900 to-navy-800 text-white p-4 flex items-center justify-between">
@@ -220,11 +219,10 @@ const Chatbot = () => {
                       className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                       <div
-                        className={`max-w-[80%] p-3 rounded-2xl ${
-                          message.sender === 'user'
-                            ? 'bg-orange-500 text-white'
-                            : 'bg-white text-gray-800 shadow-sm'
-                        }`}
+                        className={`max-w-[80%] p-3 rounded-2xl ${message.sender === 'user'
+                          ? 'bg-orange-500 text-white'
+                          : 'bg-white text-gray-800 shadow-sm'
+                          }`}
                       >
                         <p className="text-sm whitespace-pre-line">{message.text}</p>
                         <p className="text-xs mt-1 opacity-70">

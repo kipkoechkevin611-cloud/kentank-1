@@ -41,7 +41,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'How do I place an order?',
-      answer: 'You can order in three ways: 1) Add to cart on our website and checkout, 2) Call us at +254784400492, or 3) Use WhatsApp to place your order directly.',
+      answer: 'You can order in three ways: 1) Add to cart on our website and checkout, 2) Call us at +254737042076, or 3) Use WhatsApp to place your order directly.',
       icon: Phone,
     },
   ];
@@ -86,9 +86,8 @@ const FAQ: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <h3 className="font-semibold text-navy-900 pr-4">{faq.question}</h3>
                       <ChevronDown
-                        className={`w-5 h-5 text-gray-400 transition-transform flex-shrink-0 ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
+                        className={`w-5 h-5 text-gray-400 transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''
+                          }`}
                       />
                     </div>
                     <AnimatePresence>
@@ -119,11 +118,11 @@ const FAQ: React.FC = () => {
         >
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
-            href="tel:+2540784400492"
+            href="tel:+254737042076"
             className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
           >
             <Phone className="w-5 h-5" />
-            Call +254784400492
+            Call +254737042076
           </a>
         </motion.div>
       </div>
